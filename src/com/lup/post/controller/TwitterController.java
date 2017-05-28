@@ -39,11 +39,15 @@ public class TwitterController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			TwitterPoster.post(request.getParameter("statusMsg"), "D:\\WorkShop\\Projects\\LineUp\\WebContent\\" + request.getParameter("imgPath"));
+			// for windows 
+			// TwitterPoster.post(request.getParameter("statusMsg"), "D:\\WorkShop\\Projects\\LineUp\\WebContent\\" + request.getParameter("imgPath"));
+			// for linux
+			TwitterPoster.post(request.getParameter("statusMsg"), "/home/mrino/WorkShop/Projects/LineUp/WebContent/" + request.getParameter("imgPath"));			
+			request.setAttribute("message", "Post has been submitted successfully. Please check your Twitter profile.");
 		} catch (Exception e) {
+			request.setAttribute("message", "Internal Server error. Please try after some times. ");
 			e.printStackTrace();
 		}
-		request.setAttribute("message", "Post has been submitted successfully. Please check your Twitter profile.");
 		request.getRequestDispatcher("/page/gallery.jsp").forward(request, response);
 	}
 
