@@ -39,8 +39,7 @@ public class TwitterController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			TwitterPoster.post(request.getParameter("statusMsg"),
-					"D:\\Cloud\\Google Drive\\Workshop\\LineUp\\WebContent\\" + request.getParameter("imgPath"));
+			TwitterPoster.post(request.getParameter("statusMsg"), "D:\\WorkShop\\Projects\\LineUp\\WebContent\\" + request.getParameter("imgPath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
