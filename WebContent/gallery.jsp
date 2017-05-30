@@ -50,6 +50,12 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<!-- Prompting system message -->
+	<script type="text/javascript">
+		<%if(request.getAttribute("message")!=null){%>
+			alert('"Message: '+'<%=request.getAttribute("message")%>');
+		<%}%>
+	</script>
 	</head>
 	<body>
 	<div id="fh5co-offcanvass">
@@ -303,6 +309,7 @@
 	<script src="js/main.js"></script>
 	<!-- Main JS -->
 	<script src="js/app.js"></script>
+	<!-- Submit Form -->
 	<form id="pageForm" action="/LineUp/postontwitter" method="post">
 		<input type="hidden" id="imgPath" name="imgPath" />
 		<input type="hidden" id="statusMsg" name="statusMsg" value="Post by LineUp application" />
