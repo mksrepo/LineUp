@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+$(document).ready(function(){
+    $("button").click(function(){
+        $('#imgPath').val(($(this).data('src')));
+        $('#statusMsg').val($('#'+$(this).data('status')).val());
+        $('#pageForm').submit();
+    });
+});

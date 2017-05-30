@@ -45,7 +45,7 @@ public class TwitterController extends HttpServlet {
 			request.setAttribute("message", "Internal Server error. Please try after some times. ");
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher("/page/gallery.jsp").forward(request, response);
+		request.getRequestDispatcher("gallery.jsp").forward(request, response);
 	}
 
 }
